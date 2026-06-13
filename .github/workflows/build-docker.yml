@@ -23,7 +23,7 @@ on:
 env:
   AWS_REGION: ap-southeast-1
   ECR_REGISTRY: 378595784342.dkr.ecr.ap-southeast-1.amazonaws.com
-  ECR_REPOSITORY: odejs-random-color
+  ECR_REPOSITORY: nodejs-random-color
 
 jobs:
   build-and-push:
