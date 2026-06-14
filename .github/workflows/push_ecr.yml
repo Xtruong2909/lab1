@@ -32,7 +32,7 @@ jobs:
         
       - name: Tag Docker image
         run: |
-          docker tag ${{ env.ECR_REPOSITORY }}:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          docker tag ${{ secrets.AWS_ACCOUNT_ID }}:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
 
       
       - name: Push Docker image to Amazon ECR
