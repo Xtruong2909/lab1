@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 
 <head>
-    <title>Welcome to My Website</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chào mừng — My Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1 id="welcome" style="color: #7B9CA6;">Welcome to My Website v.1.1 Github deploy</h1>
-    <p>Thank you for visiting. Enjoy your stay!</p>
+    <div class="container">
+        <header class="hero">
+            <h1 id="welcome">Chào mừng đến với trang của tôi</h1>
+            <p class="subtitle">Phiên bản 1.1 — GitHub deploy</p>
+        </header>
 
-    <form action="/api/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <main>
+            <div class="card">
+                <p class="lead">Thank you for visiting. Enjoy your stay!</p>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+                <form action="/api/login" method="POST" class="login-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
 
-        <input type="button" value="Login" onclick="window.location.href='/learning'">
-        <input type="reset" value="Reset">
-    </form>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <div class="actions">
+                        <button type="submit" class="btn primary">Login</button>
+                        <button type="reset" class="btn">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="site-footer">Made with ❤️</footer>
+    </div>
 </body>
+
 </html>
 
 

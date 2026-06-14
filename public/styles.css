@@ -1,0 +1,51 @@
+:root{
+  --accent:#8CDC5C;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(135deg,#071020 0%, #0f2a44 50%, #192a4a 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.container{
+  width:100%;
+  max-width:920px;
+  padding:28px;
+}
+.hero{text-align:center;margin-bottom:18px}
+#welcome{font-size:2.1rem;margin:0;color:var(--accent);font-weight:800}
+.subtitle{margin:6px 0 0;color:rgba(230,238,248,0.85)}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px);
+  border-radius:12px;
+  padding:22px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+.lead{margin:0 0 12px;color:rgba(230,238,248,0.95)}
+.login-form{display:flex;flex-direction:column;gap:10px}
+label{font-size:0.92rem;color:rgba(230,238,248,0.9)}
+input[type="text"], input[type="password"]{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.07);
+  background:rgba(255,255,255,0.02);
+  color:#eaf6ff;
+}
+.actions{display:flex;gap:10px;margin-top:8px}
+.btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:700;background:transparent;color:inherit}
+.btn.primary{background:linear-gradient(90deg,#8CDC5C,#56bca6);color:#04231a}
+.site-footer{text-align:center;margin-top:18px;color:rgba(230,238,248,0.6);font-size:0.9rem}
+
+@media (max-width:600px){
+  #welcome{font-size:1.4rem}
+  .container{padding:16px}
+}
