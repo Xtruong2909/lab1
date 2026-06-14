@@ -8,6 +8,7 @@ on:
 env:
     AWS_REGION: ap-southeast-1
     ECR_REPOSITORY: nodejs-demo
+    AWS_ACCOUNT_ID: 378595784342
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
