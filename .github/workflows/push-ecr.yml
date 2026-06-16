@@ -41,4 +41,4 @@ jobs:
 
       - name: Push Docker image to ECR
         run: |
-            docker push ${{ env.AWS_ACCOUNT_ID }}/${{ env.ECR_REPOSITORY }}:latest
+            docker push ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
