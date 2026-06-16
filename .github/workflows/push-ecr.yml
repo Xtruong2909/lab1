@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-
+    tags: 
+      - 'v*.*.*' 
 env:
     AWS_REGION: ap-southeast-1
     ECR_REPOSITORY: nodejs-demo
@@ -33,12 +34,12 @@ jobs:
     
       - name: Build Docker image
         run: |
-         docker build -t ${{ env.ECR_REPOSITORY }}:latest . 
+         docker build -t ${{ env.ECR_REPOSITORY }}:${{github.ref_name}} . 
     
       - name: Tag Docker image
         run: |
-            docker tag ${{ env.ECR_REPOSITORY }}:latest ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
+            docker tag ${{ env.ECR_REPOSITORY }}:${{github.ref_name}} ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{github.ref_name}}
 
       - name: Push Docker image to ECR
         run: |
-            docker push ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
+            docker push ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{github.ref_name}}
