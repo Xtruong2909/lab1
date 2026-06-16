@@ -1,0 +1,44 @@
+name: Build and Push to ECR
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+    AWS_REGION: ap-southeast-1
+    ECR_REPOSITORY: nodejs-demo
+    AWS_ACCOUNT_ID: 378595784342
+    
+    
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-region: ${{ env.AWS_REGION }}
+        
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+    
+      - name: Build Docker image
+        run: |
+         docker build -t ${{ env.ECR_REPOSITORY }}:latest . 
+    
+      - name: Tag Docker image
+        run: |
+            docker tag ${{ env.ECR_REPOSITORY }}:latest ${{ env.AWS_ACCOUNT_ID }}/${{ env.ECR_REPOSITORY }}:latest
+
+      - name: Push Docker image to ECR
+        run: |
+            docker push ${{ env.AWS_ACCOUNT_ID }}/${{ env.ECR_REPOSITORY }}:latest
