@@ -46,7 +46,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
-          key: ${{ secrets.EC2_KEY }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
               aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 378595784342.dkr.ecr.ap-southeast-1.amazonaws.com
               docker pull 378595784342.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs-demo:${{ github.ref_name }}
