@@ -21,28 +21,69 @@
             </ul>
         </nav>
 
-        <header class="hero">
-            <h1 id="welcome">Chào mừng đến với trang của tôi</h1>
-            <p class="subtitle">Phiên bản 1.1 — GitHub deploy</p>
+        <header class="hero hero-home">
+            <div class="hero-copy">
+                <p class="eyebrow">Thời trang nam nữ</p>
+                <h1 id="welcome">Cửa hàng phong cách, mua sắm nhanh gọn.</h1>
+                <p class="subtitle">Sản phẩm nổi bật, giao diện hiện đại và trải nghiệm mua hàng siêu mượt.</p>
+                <div class="hero-buttons">
+                    <a class="btn primary" href="products.html">Shop Now</a>
+                    <a class="btn" href="cart.html">Xem giỏ hàng</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="highlight-card">
+                    <span>Best seller</span>
+                    <h2>Green T-Shirt</h2>
+                    <p>Áo thun mềm mại, phù hợp mặc đi chơi và đi làm.</p>
+                </div>
+                <div class="highlight-tiles">
+                    <div class="tile">Hoodies</div>
+                    <div class="tile">Accessory</div>
+                    <div class="tile">Sneakers</div>
+                </div>
+            </div>
         </header>
 
         <main>
-            <div class="card">
-                <p class="lead">Thank you for visiting. Enjoy your stay!</p>
+            <section class="home-features">
+                <div class="feature-card">
+                    <h3>Miễn phí giao hàng</h3>
+                    <p>Đơn hàng từ 500k trở lên, giao nhanh trong nội thành.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Trả hàng dễ dàng</h3>
+                    <p>Đổi trả 7 ngày nếu không vừa vặn hoặc lỗi.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Thanh toán an toàn</h3>
+                    <p>Hỗ trợ VNPay, Momo và chuyển khoản ngân hàng.</p>
+                </div>
+            </section>
 
-                <form action="/api/login" method="POST" class="login-form">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-
-                    <div class="actions">
-                        <button type="submit" class="btn primary">Login</button>
-                        <button type="reset" class="btn">Reset</button>
+            <section class="home-products">
+                <div class="section-heading">
+                    <h2>Sản phẩm nổi bật</h2>
+                    <a class="btn" href="products.html">Xem tất cả</a>
+                </div>
+                <div class="product-grid home-grid">
+                    <div class="product card-small">
+                        <img src="https://via.placeholder.com/320x200?text=Green+T-Shirt" alt="Green T-Shirt">
+                        <h3>Green T-Shirt</h3>
+                        <p class="price">199k VND</p>
                     </div>
-                </form>
-            </div>
+                    <div class="product card-small">
+                        <img src="https://via.placeholder.com/320x200?text=Blue+Hoodie" alt="Blue Hoodie">
+                        <h3>Blue Hoodie</h3>
+                        <p class="price">499k VND</p>
+                    </div>
+                    <div class="product card-small">
+                        <img src="https://via.placeholder.com/320x200?text=Sneakers" alt="Sneakers">
+                        <h3>Sneakers</h3>
+                        <p class="price">899k VND</p>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer">Made with ❤️</footer>
